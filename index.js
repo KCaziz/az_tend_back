@@ -10,8 +10,18 @@ import passport from "passport";
 import session from "express-session";
 import "./middlewares/passport.js"; //pour la connexion depuis google
 import "./cronJobs/subscriptionExpiration.js"; // Importer la tâche planifiée de l'expiration des abonnenements
+const express = require("express");
+const path = require("path");
 
 const app = express();
+// Servir les fichiers statiques depuis le dossier dist
+app.use(express.static(path.join(__dirname, "dist")));
+
+// Pour toutes les autres routes, renvoyer index.html (pour gérer le routing côté client)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.json());
