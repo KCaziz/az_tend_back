@@ -10,8 +10,7 @@ import passport from "passport";
 import session from "express-session";
 import "./middlewares/passport.js"; //pour la connexion depuis google
 import "./cronJobs/subscriptionExpiration.js"; // Importer la tâche planifiée de l'expiration des abonnenements
-const express = require("express");
-const path = require("path");
+import path from 'path';
 
 const app = express();
 // Servir les fichiers statiques depuis le dossier dist
