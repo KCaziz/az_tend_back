@@ -13,18 +13,7 @@ import "./cronJobs/subscriptionExpiration.js"; // Importer la tâche planifiée 
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const app = express();
-// Servir les fichiers statiques depuis le dossier dist
-app.use(express.static(path.join(__dirname, "dist")));
-
-// Pour toutes les autres routes, renvoyer index.html (pour gérer le routing côté client)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist", "index.html"));
-});
+onst app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
