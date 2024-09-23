@@ -13,7 +13,7 @@ import "./cronJobs/subscriptionExpiration.js"; // Importer la tâche planifiée 
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-onst app = express();
+const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
