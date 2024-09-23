@@ -38,7 +38,7 @@ app.use(passport.session());
 // cors middleware
 app.use(
   cors({
-    origin: "https://az-tend-front.onrender.com/",
+    origin: ["https://az-tend-front.onrender.com", "http://localhost:5173"],
     methods: ["GET", "PUT", "DELETE", "POST", "PATCH"],
   })
 );
