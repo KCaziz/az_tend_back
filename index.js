@@ -11,6 +11,11 @@ import session from "express-session";
 import "./middlewares/passport.js"; //pour la connexion depuis google
 import "./cronJobs/subscriptionExpiration.js"; // Importer la tâche planifiée de l'expiration des abonnenements
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const app = express();
 // Servir les fichiers statiques depuis le dossier dist
